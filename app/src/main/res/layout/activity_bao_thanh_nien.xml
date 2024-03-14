@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/buttonTheThaoTn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="The Thao"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonTinTucTn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Tic tuc"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonThoisuTn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Thoi su"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonGiaitriTn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Giai tri"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonSuckhoeTn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Suc khoe"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonDoiSongTn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Doi song"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+</LinearLayout>

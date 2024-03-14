@@ -15,6 +15,18 @@
         android:theme="@style/Theme.NewReader"
         tools:targetApi="31">
         <activity
+            android:name=".BaoThanhNienActivity"
+            android:exported="true" />
+        <activity
+            android:name=".BaoMoiActivity"
+            android:exported="true" />
+        <activity
+            android:name=".VnexpressActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true" />
+        <activity
             android:name=".DetailNews"
             android:exported="false" />
         <activity

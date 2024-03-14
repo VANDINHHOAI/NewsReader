@@ -35,12 +35,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        Intent intent = getIntent();
+        String link = intent.getStringExtra("LINK");
 
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                new ReadData().execute("https://vnexpress.net/rss/thoi-su.rss");
+                new ReadData().execute(link);
             }
         });
         arrayList = new ArrayList<DocBao>();
@@ -65,27 +66,32 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             XMLDOMParser parser = new XMLDOMParser();
             Document document = parser.getDocument(s);
-            NodeList nodeList = document.getElementsByTagName("item");
-            NodeList nodeListDecription = document.getElementsByTagName("description");
-            String hinhAnh = "";
-            String title = "";
-            String link = "";
-            for (int i = 0; i < nodeList.getLength(); i++) {
-                String cdata = nodeListDecription.item(i + 1).getTextContent();
-                //hàm đọc đc img trong cdata
-                Pattern p = Pattern.compile("<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>");
-                Matcher matcher = p.matcher(cdata);
-                //ktra noi dung
-                if(matcher.find()){
-                    hinhAnh = matcher.group(1);
+            if (document != null) {
+                NodeList nodeList = document.getElementsByTagName("item");
+                NodeList nodeListDescription = document.getElementsByTagName("description");
+                String hinhAnh = "";
+                String title = "";
+                String link = "";
+                for (int i = 0; i < nodeList.getLength(); i++) {
+                    String cdata = "";
+                    if (nodeListDescription.getLength() > i + 1) {
+                        cdata = nodeListDescription.item(i + 1).getTextContent();
+                        //hàm đọc đc img trong cdata
+                        Pattern p = Pattern.compile("<img[^>]+src\\s*=\\s*['\"]([^'\"]+)['\"][^>]*>");
+                        Matcher matcher = p.matcher(cdata);
+                        //ktra noi dung
+                        if(matcher.find()){
+                            hinhAnh = matcher.group(1);
+                        }
+                    }
+                    Element element = (Element) nodeList.item(i);
+                    title = parser.getValue(element,"title");
+                    link = parser.getValue(element,"link");
+                    arrayList.add(new DocBao(title, link, hinhAnh));
                 }
-                Element element = (Element) nodeList.item(i);
-                title = parser.getValue(element,"title");
-                link = parser.getValue(element,"link");
-                arrayList.add(new DocBao(title, link, hinhAnh));
+                customAdapter = new CustomAdapter(MainActivity.this,android.R.layout.simple_list_item_1,arrayList);
+                lstNews.setAdapter(customAdapter);
             }
-            customAdapter = new CustomAdapter(MainActivity.this,android.R.layout.simple_list_item_1,arrayList);
-            lstNews.setAdapter(customAdapter);
             super.onPostExecute(s);
 
         }

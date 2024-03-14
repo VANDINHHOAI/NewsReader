@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/buttonTheThaoBm"
+        android:layout_width="match_parent"
+        android:background="@color/teal_700"
+        android:layout_height="100dp"
+        android:text="thể thao"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonTinTucBm"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="tin tức"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonThoisuBm"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="thoi sự"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonGiaitriBm"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="giải trí"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonSuckhoeBm"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="sức khoẻ"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <Button
+        android:id="@+id/buttonDoiSongBm"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="đời sóng"
+        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteY="68dp" />
+</LinearLayout>
